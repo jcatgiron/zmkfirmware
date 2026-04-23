@@ -5,4 +5,21 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build.yml@main
+    runs-on: ubuntu-latest
+    container: zmkfirmware/zmk-build-arm:stable
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build firmware
+        run: |
+          west init -l config
+          west update
+          west zephyr-export
+          west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="$(pwd)/config"
+      
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: build/zephyr/zmk.uf2
