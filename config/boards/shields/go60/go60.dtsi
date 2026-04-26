@@ -1,9 +1,16 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/rgb.h>
 
-kscan0: kscan {
-    compatible = "zmk,kscan-gpio-matrix";
+/ {
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+    };
 
-    row-gpios = <...>;
-    col-gpios = <...>;
+    go60_left_kscan: kscan_left {
+        compatible = "zmk,kscan-gpio-matrix";
+    };
+
+    go60_right_kscan: kscan_right {
+        compatible = "zmk,kscan-gpio-matrix";
+    };
 };
