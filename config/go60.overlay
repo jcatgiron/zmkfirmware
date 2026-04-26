@@ -1,1 +1,6 @@
-
+/ {
+    chosen {
+        zmk,underglow = &rgb_underglow;
+        zmk,layer-underglow = &layer_ug;
+    };
+};
