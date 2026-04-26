@@ -1,28 +1,12 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-
-        // IMPORTANTE: placeholders (deben coincidir con tu shield real después)
-        row-gpios = <>;
-        col-gpios = <>;
-
-        debounce-press-ms = <5>;
-        debounce-release-ms = <5>;
+    chosen {
+        zmk,matrix_transform = &default_transform;
     };
 
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-
-        // placeholder seguro para evitar crash de tamaño
-        rows = <5>;
-        columns = <12>;
-    };
-
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
     };
 };
