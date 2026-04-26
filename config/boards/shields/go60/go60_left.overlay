@@ -1,8 +1,0 @@
-#include "go60.dtsi"
-
-&kscan0 {
-    // Aquí no se necesita agregar la configuración de los pines de filas y columnas
-    // ya que eso debe estar en el go60.dtsi o en un archivo común.
-    // solo debes referir al kscan correcto
-    zmk,kscan = &kscan0;
-};
