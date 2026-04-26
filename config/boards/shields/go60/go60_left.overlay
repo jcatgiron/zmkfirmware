@@ -1,5 +1,15 @@
-#include "go60.overlay"
+#include "go60.dtsi"
 
-&kscan0 {
-    status = "okay";
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+
+        label = "KSCAN_LEFT";
+
+        row-gpios = <...>;
+        col-gpios = <...>;
+
+        debounce-press-ms = <5>;
+        debounce-release-ms = <5>;
+    };
 };
