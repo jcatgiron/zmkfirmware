@@ -1,6 +1,0 @@
-#include "go60.dtsi"
-
-&kscan1 {
-    // Lo mismo aquí, solo debes referir al kscan correcto para este lado.
-    zmk,kscan = &kscan1;
-};
