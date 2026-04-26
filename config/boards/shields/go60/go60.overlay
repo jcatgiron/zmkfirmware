@@ -1,3 +1,19 @@
+#include <dt-bindings/zmk/rgb.h>
+#include "go60_rgb_layers.dtsi"
+
 / {
-    // vacío o solo cosas de hardware si las hay
+    chosen {
+        zmk,underglow = &rgb_underglow;
+        zmk,layer-underglow = &layer_ug;
+    };
+
+    rgb_underglow: rgb_underglow {
+        compatible = "zmk,underglow";
+        status = "okay";
+
+        chain-length = <60>;
+        brightness = <80>;
+
+        default-effect = <RGB_EFF_SOLID>;
+    };
 };
