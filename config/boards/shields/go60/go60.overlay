@@ -1,8 +1,3 @@
-#include "go60_rgb_layers.dtsi"
-
- / {
-    chosen {
-        zmk,underglow = &rgb_underglow;
-        zmk,layer-underglow = &layer_ug;
-    };
+/ {
+    // vacío o solo cosas de hardware si las hay
 };
