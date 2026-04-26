@@ -1,0 +1,22 @@
+/ {
+    layer_ug: layer_ug {
+        compatible = "zmk,layer-underglow";
+
+        base {
+            layer = <0>;
+            color = <94 234 242>;   // amarillo
+        };
+
+        keypad {
+            layer = <1>;
+            color = <94 242 166>;     // verde
+        };
+
+        symbol {
+            layer = <2>;
+            color = <244 180 94>;;     // azul
+        };
+
+        // NO incluyes Magic → queda como está
+    };
+};
