@@ -1,11 +1,12 @@
 #include "go60.dtsi"
 
-/ {
+ / {
     chosen {
-        zmk,kscan = &go60_left_kscan;
+        zmk,kscan = &kscan_left;
+        zmk,matrix_transform = &default_transform;
     };
 
-    go60_left_kscan: kscan_left {
+    kscan_left: kscan_left {
         status = "okay";
 
         row-gpios = <...>;
