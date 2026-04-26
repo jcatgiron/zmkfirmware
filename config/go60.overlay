@@ -1,6 +1,37 @@
+#include <dt-bindings/zmk/rgb.h>
+
 / {
     chosen {
         zmk,underglow = &rgb_underglow;
         zmk,layer-underglow = &layer_ug;
+    };
+
+    rgb_underglow: rgb_underglow {
+        compatible = "zmk,underglow";
+        status = "okay";
+
+        chain-length = <60>;
+
+        default-effect = <RGB_EFF_SOLID>;
+        brightness = <80>;
+    };
+
+    layer_ug: layer_ug {
+        compatible = "zmk,layer-underglow";
+
+        base {
+            layer = <0>;
+            color = <255 200 0>;   // amarillo
+        };
+
+        keypad {
+            layer = <1>;
+            color = <0 255 0>;     // verde
+        };
+
+        symbol {
+            layer = <2>;
+            color = <0 0 255>;     // azul
+        };
     };
 };
