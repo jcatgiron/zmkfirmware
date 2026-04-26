@@ -1,10 +1,21 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+
+        row-gpios = <&gpio0 0 &gpio0 1 &gpio0 2 &gpio0 3 &gpio0 4>;
+        col-gpios = <&gpio1 0 &gpio1 1 &gpio1 2 &gpio1 3 &gpio1 4 &gpio1 5>;
+
+        debounce-press-ms = <5>;
+        debounce-release-ms = <5>;
+    };
+
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        rows = <5>;  // 5 filas
-        columns = <6>;  // 6 columnas (cada lado tiene 6)
+
+        rows = <5>;
+        columns = <6>;
 
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
@@ -13,21 +24,5 @@
             RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)
             RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5)
         >;
-    };
-
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        row-gpios = <&gpio0 0 &gpio0 1 &gpio0 2 &gpio0 3 &gpio0 4>;
-        col-gpios = <&gpio1 0 &gpio1 1 &gpio1 2 &gpio1 3 &gpio1 4 &gpio1 5>;
-        debounce-press-ms = <5>;
-        debounce-release-ms = <5>;
-    };
-
-    kscan1: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        row-gpios = <&gpio0 5 &gpio0 6 &gpio0 7 &gpio0 8 &gpio0 9>;
-        col-gpios = <&gpio1 6 &gpio1 7 &gpio1 8 &gpio1 9 &gpio1 10 &gpio1 11>;
-        debounce-press-ms = <5>;
-        debounce-release-ms = <5>;
     };
 };
