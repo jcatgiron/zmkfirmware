@@ -229,21 +229,17 @@
 /* System behavior and macros */
 / {
     behaviors {
-        ZMK_TD_LAYER(lower, LAYER_Lower)
-    };
-};
-
-/ {
-    macros {
-        rgb_ug_status_macro: rgb_ug_status_macro {
-            label = "RGB_UG_STATUS";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&rgb_ug RGB_STATUS>;
+        magic: magic {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAGIC_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&none>;
         };
     };
 };
+
 
 / {
 #ifdef BT_DISC_CMD
