@@ -1,11 +1,10 @@
 #include "go60.dtsi"
 
- / {
-    chosen {
-        zmk,kscan = &kscan0;
-    };
+&kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
+};
 
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-    };
+chosen {
+    zmk,matrix_transform = &default_transform;
+    zmk,kscan = &kscan0;
 };
