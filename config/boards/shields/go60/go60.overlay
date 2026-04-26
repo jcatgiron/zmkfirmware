@@ -1,4 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/rgb.h>
+#include "go60.dtsi"
 #include "go60_rgb_layers.dtsi"
 
 / {
