@@ -6,11 +6,13 @@
         compatible = "zmk,matrix-transform";
     };
 
-    go60_left_kscan: kscan_left {
+    kscan_left: kscan_left {
         compatible = "zmk,kscan-gpio-matrix";
+        status = "disabled";
     };
 
-    go60_right_kscan: kscan_right {
+    kscan_right: kscan_right {
         compatible = "zmk,kscan-gpio-matrix";
+        status = "disabled";
     };
 };
