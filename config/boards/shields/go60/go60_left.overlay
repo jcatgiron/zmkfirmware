@@ -1,18 +1,12 @@
 #include "go60.dtsi"
 
- / {
+/ {
     chosen {
-        zmk,kscan = &kscan_left;
+        zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
     };
 
-    kscan_left: kscan_left {
+    kscan0 {
         status = "okay";
-
-        row-gpios = <...>;
-        col-gpios = <...>;
-
-        debounce-press-ms = <5>;
-        debounce-release-ms = <5>;
     };
 };
