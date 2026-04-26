@@ -1,5 +1,3 @@
-include:
-  - board: nice_nano_v2
-    shield: go60_left
-  - board: nice_nano_v2
-    shield: go60_right
+overlays:
+  - go60_left.overlay
+  - go60_right.overlay
